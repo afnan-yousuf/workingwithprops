@@ -1,10 +1,8 @@
-import React from 'react'
+import {React, useEffect, useState} from 'react'
+
 
 function Posts() {
-
-
-    const [post, setPost] = useState([])
-  
+  const [post, setPost] = useState([])
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then((response)=>{
@@ -14,7 +12,6 @@ function Posts() {
       setPost(data) 
     })
   },[])
-
 
   return (
     <ul>
